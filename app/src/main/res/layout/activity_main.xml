@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp">
+
+    <TextView android:id="@+id/btStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Bluetooth: Idle" android:textSize="16sp" android:textStyle="bold" />
+    <TextView android:id="@+id/wifiStatus" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Wi-Fi: Unavailable (no receiver)" android:textSize="14sp" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/btnRegister" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Enable HID" />
+        <Button android:id="@+id/btnDiscoverable" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Discoverable" />
+    </LinearLayout>
+
+    <Spinner android:id="@+id/deviceSpinner" android:layout_width="match_parent" android:layout_height="48dp" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/btnConnect" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Connect" />
+        <Button android:id="@+id/btnDisconnect" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Disconnect" />
+    </LinearLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sensitivity" />
+    <SeekBar android:id="@+id/sensitivity" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:max="40" android:progress="12" />
+
+    <com.example.phonemouse.TouchpadView android:id="@+id/touchpad"
+        android:layout_width="match_parent" android:layout_height="320dp" android:layout_marginTop="8dp" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/btnLeft" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="64dp" android:text="Left" />
+        <Button android:id="@+id/btnDouble" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="64dp" android:text="Double" />
+        <Button android:id="@+id/btnRight" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="64dp" android:text="Right" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/btnScrollUp" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Scroll ▲" />
+        <Button android:id="@+id/btnScrollDown" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Scroll ▼" />
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" android:textStyle="bold" android:text="Wi-Fi mode (optional)" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Unavailable unless Phone B already runs a compatible receiver or privileged service that accepts newline-delimited JSON over TCP (see README). A normal phone has none, so connecting will fail. Nothing is sent otherwise." />
+    <EditText android:id="@+id/wifiHost" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Receiver host (e.g. from your network)" android:inputType="textUri" />
+    <EditText android:id="@+id/wifiPort" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Port" android:inputType="number" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button android:id="@+id/btnWifiConnect" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Connect Wi-Fi" />
+        <Button android:id="@+id/btnWifiDisconnect" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="Disconnect Wi-Fi" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
